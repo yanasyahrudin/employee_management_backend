@@ -55,7 +55,7 @@ npm run dev
 npm start
 ```
 
-Server runs at: `http://localhost:4001`
+Server runs at: `http://localhost:_your_backend_port_`
 
 ## Default Login
 
@@ -74,8 +74,6 @@ Server runs at: `http://localhost:4001`
 |--------|----------|-------------|------|
 | GET | `/api/users` | Get all users | - |
 | POST | `/api/users` | Create user | `{ username, password, fullname, role }` |
-| PUT | `/api/users/:id` | Update user | `{ username, password, fullname, role }` |
-| DELETE | `/api/users/:id` | Delete user | - |
 
 ### Employee Management (Protected Routes)
 | Method | Endpoint | Description | Body |
