@@ -17,7 +17,7 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ id: user.id, username: user.username, role: user.role }, process.env.JWT_SECRET || 'secret', { expiresIn: '8h' });
     res.json({ token, user: { id: user.id, username: user.username, role: user.role } });
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 
@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
     const [result] = await pool.query('INSERT INTO users (username, password, fullname, role) VALUES (?, ?, ?, ?)', [username, hashed, fullname || '', role || 'staff']);
     res.json({ id: result.insertId, username });
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 
