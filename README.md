@@ -5,7 +5,7 @@ Simple API server using Node.js, Express.js, and MySQL for user and employee man
 ## Features
 
 - JWT Authentication
-- User Management (CRUD)
+- User Management (CR)
 - Employee Management (CRUD) + Photo Upload
 - Photo upload JPG/JPEG max 300KB
 

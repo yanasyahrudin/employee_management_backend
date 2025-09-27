@@ -46,7 +46,7 @@ router.get('/', auth, async (req, res) => {
     const [rows] = await pool.query('SELECT id, name, position, photo, created_at FROM employees');
     res.json(rows);
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 
@@ -58,7 +58,7 @@ router.post('/', auth, upload.single('photo'), async (req, res) => {
     const [result] = await pool.query('INSERT INTO employees (name, position, photo) VALUES (?, ?, ?)', [name, position, photoPath]);
     res.json(result);
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 
@@ -78,7 +78,7 @@ router.put('/:id', auth, upload.single('photo'), async (req, res) => {
     const [result] = await pool.query('UPDATE employees SET name = ?, position = ?, photo = ? WHERE id = ?', [name, position, photoPath, req.params.id]);
     res.json(result);
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 
@@ -92,7 +92,7 @@ router.delete('/:id', auth, async (req, res) => {
     await pool.query('DELETE FROM employees WHERE id = ?', [req.params.id]);
     res.json({ message: 'Employee deleted' });
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 

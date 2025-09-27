@@ -29,7 +29,7 @@ router.get("/", auth, async (req, res) => {
     );
     res.json(rows);
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 
@@ -60,7 +60,7 @@ router.post("/", auth, async (req, res) => {
     );
     res.json({ id: result.insertId, username });
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
   }
 });
 
